@@ -25,12 +25,12 @@
 ## Project Overview
 This Power BI project provides an in-depth analysis of sales order data, focusing on key performance metrics such as revenue, profit, order quantity, and delivery times. The goal is to gain insights into channel performance, customer trends, and sales efficiency to make data-driven business decisions.
 
-*Sample dashboard screenshot:*
-![powerbi project](https://github.com/user-attachments/assets/96447ea1-8fb0-458d-9242-55986bc6a8a1)
+*Dataset Screenshot:*
+![05 11 2024_15 07 10_REC](https://github.com/user-attachments/assets/31bdaff5-5cac-4959-be06-1be693df7aa6)
 
 ## Dataset
 The analysis is based on a dataset containing sales orders and related details. The dataset includes fields like:
-- **Order ID**: Unique identifier for each order
+- **Order Number**: Unique identifier for each order
 - **Order Date**: Date the order was placed
 - **Channel**: Sales channel (e.g.,Ware house, wholesale,Distributor)
 - **Order Quantity**: Quantity of items in the order
@@ -38,6 +38,30 @@ The analysis is based on a dataset containing sales orders and related details. 
 - **Total Unit Cost**: Unit cost for items in the order
 
 > **DATASET:** (https://docs.google.com/spreadsheets/d/1frJpprSb0emhQauCBy8JvYRTxAWIJGSS/edit?usp=sharing&ouid=102759594683228281506&rtpof=true&sd=true)
+## Data Preparation and Modeling
+
+- **Data Understanding**: The dataset consisted of 12 columns and over 7991 rows with fields like Order Number, Order Date, Ship Date, Customer ID, Channel, Warehouse Code, Delivery Region, Product Description, Order Quantity, Unit Price, Total Unit Cost, and Total Revenue.
+
+- **Data Cleaning**: Initial cleaning was done in Power Query:
+  - Renamed fields for clarity; Customer Name Index to Customer ID,Delivery Region ID was changed to Delivery ID as well as Products Description Index to Product DescriptionID.
+  - Removed unnecessary columns; Currency Code column was removed
+  - Replaced missing values where necessary, using the median for numerical fields to maintain data integrity.
+
+- **Data Modeling**:
+  - Created fact and dimension tables:
+  - A fact table is a table that contains all the primary key of the dimension table and the associated metrics. Dimension Table contains the primary keys of that table and the description of the metrics in the fact table.
+  - Renamed the Sales Orders Table to Sales Orders-Fact
+  - Duplicated the Sales Order-Fact Table twice and renamed as Channel –Dim and Warehouse - Dim, (they are the categorical data in the dataset)
+  - In the channel –Dim Table, other columns except the channel column were deleted, duplicate from the column were removed, then a column index was created - this is the unique ID for channel. (click on Add column tab; click on the drop down for index column, click FROM 1) ,do same for Warehouse - Dim
+  - 
+    - `Sales Orders-Fact` (central fact table)
+    - `Channel-Dim` and `Warehouse-Dim` (dimension tables)
+  - Established relationships between tables using Primary and Foreign Keys to enable data normalization and integrity.
+  - **Joins (merge)**: Used Left Outer Joins to combine tables based on common fields (Channel and Warehouse).
+
+Here's an overview of the data model used in the project:
+
+
 ## Key Insights and Metrics
 Here are some of the main insights and metrics derived from the analysis:
 - **Total Profit**: 57.79M
