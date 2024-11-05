@@ -60,7 +60,7 @@ The analysis is based on a dataset containing sales orders and related details. 
   - **Joins (merge)**: Used Left Outer Joins to combine tables based on common fields (Channel and Warehouse).
 
 Here's an overview of the data model used in the project:
-
+![model](https://github.com/user-attachments/assets/6dc97f71-0454-4160-90a9-cb52b4d27969)
 
 ## Key Insights and Metrics
 Here are some of the main insights and metrics derived from the analysis:
@@ -68,28 +68,6 @@ Here are some of the main insights and metrics derived from the analysis:
 - **Total Revenue**: 154.57M
 - **Total Orders**: 7,991
 - **Average Delivery Days**: 60.08 days
-
-These metrics provide a snapshot of the overall sales performance and efficiency.
-
-## Dashboard Components
-The Power BI dashboard contains multiple visualizations, including:
-- **Revenue and Order Trends by Month**: Visualizes monthly trends in total revenue and order volume.
-- **Orders and Revenue by Channel**: Compares performance across different sales channels.
-- **Quantity Sold vs. Total Revenue**: Analyzes the relationship between quantity sold and total revenue.
-- **Profitability by Channel**: Identifies the most profitable sales channels.
-
-## Data Preparation and Modeling
-The dataset underwent several steps of data preparation, including:
-1. **Data Cleaning**: Removing duplicates, handling missing values, and standardizing date formats.
-2. **Table Creation**: Creating tables for sales orders, channels, and date information.
-3. **Data Transformation**: Calculating new columns for profit, delivery days, and other derived metrics.
-4. **Relationships**: Establishing relationships between tables (e.g., linking sales orders to date and channel tables).
-
-### Data Model
-Here's an overview of the data model used in the project:
-
-![Data Model Screenshot](images/data_model.png) <!-- Replace with the actual path to your image -->
-
 ## Calculated Measures
 Several DAX measures were created to provide additional insights. Some key measures include:
 
@@ -105,5 +83,22 @@ Several DAX measures were created to provide additional insights. Some key measu
 - **Average Delivery Days**
   ```DAX
   Average Delivery Days = AVERAGE('Sales Orders - Fact'[Delivery Days])
+## Exploratory Data Analysis (EDA)
+The dashboard includes several visualizations to display sales metrics, trends, and channel performance:
+
+1. **Total Revenue by Month (Line Chart)** – Tracks revenue patterns over the year.
+2. **Order Quantity by Month (Bar Chart)** – Displays monthly order quantity distribution.
+3. **Orders by Month (Line Chart)** – Illustrates the frequency of orders over time.
+4. **Total Revenue by Channel (Pie Chart)** – Breaks down revenue by channel (Wholesale, Distributor, Export).
+5. **Orders by Channel (Funnel Chart)** – Visualizes order distribution across different channels.
+6. **Quantity Sold by Total Revenue (Scatter Plot)** – Shows the relationship between quantity sold and total revenue.
+7. **Total Profit by Channel (Heat Map)** – Highlights profitability for each channel.
+Here's an overview of the interactive dashboard:
+## Conclusion
+The **Sales Order Analysis Dashboard** is a comprehensive tool that empowers decision-makers to gain actionable insights into sales performance. By providing an in-depth look at monthly revenue trends, order quantities, and channel profitability, the dashboard facilitates strategic decision-making to optimize sales operations and channel management. Key metrics, such as total revenue, profit, and average delivery times, enable teams to identify areas for improvement and enhance overall customer satisfaction.
+With interactive features like drill-down capabilities, filtering options, and real-time alerts, this dashboard not only supports day-to-day monitoring but also aids in long-term strategic planning. Ultimately, it provides a data-driven foundation for improving efficiency, boosting profitability, and achieving operational excellence.
+
+
+
 
 
