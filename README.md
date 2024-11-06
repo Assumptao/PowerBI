@@ -23,7 +23,7 @@ This Power BI project provides an in-depth analysis of sales order data, focusin
 
 ## Dataset Source
 
-The Primary dataset used for this analysis is the "Sales Order.csv" file containing sales orders and other metrics. The dataset consisted of 12 columns and over 7991 rows with fields like
+The Primary dataset used for this analysis is the "Sales Order.xlxs" file containing sales orders and other metrics. The dataset consisted of 12 columns and over 7991 rows with fields like
 
 - **Order Number**: Unique identifier for each order
 - **Order Date**: Date the order was placed
